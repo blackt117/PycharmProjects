@@ -1,0 +1,96 @@
+import FootMeasure
+#==========================================================
+# Name: Tyler Black
+# Due Date: 2/17/23
+# Algorithm: (comments in FootMeasure.py will go more into it)
+# Step 1: Create innit and str/repr methods for the FootMeasure class. Modify the Str method to take in certain data and
+# output data as desired given the indut data. FootMeasure() -> 0 ft. 0 in., FootMeasure(feet=5) - > 5 ft., FootMeasure(1,5) -> 1 ft. 5 in.,
+# FootMeasure(7,34) - > 9 ft. 10 in, FootMeasure(inches=68) -> 5 ft. 8 in., etc
+# Step 2: Create the Addition Method by converting each measurement into inches, adding that result up, then converting that result into inches and
+# feet using truncated division and modulus operators, and sending that information back to the FootMeasure Class
+# Step 3: Create the six boolean operator methods similar to the addition method by converting the measurements to inches first then comparing the
+# results using the respective boolean operator
+# Step 4: Create this test file to showcase the work
+#
+# Sources: Dr. Pence
+#====================================================================
+
+def main():
+    print('Testing __innit__ and __str__ classes')
+    Foot1=FootMeasure.FootMeasure(inches = 5, feet =1)
+    print('Foot1 should be 1 ft. 5 in. ->',Foot1)
+    Foot2 = FootMeasure.FootMeasure(inches=68)
+    print('Foot2 should be 5 ft. 8 in. ->', Foot2)
+    Foot3 = FootMeasure.FootMeasure(feet=5)
+    print('Foot3 should be 5 ft. ->', Foot3)
+    Foot4 = FootMeasure.FootMeasure(0,0)
+    print('Foot4 should be 0 ft. 0 in. ->', Foot4)
+    Foot5 = FootMeasure.FootMeasure()
+    print('Foot5 should be 0 ft. 0 in. ->', Foot5)
+    Foot6 = FootMeasure.FootMeasure(inches=60)
+    print('Foot6 should be 5 ft. ->', Foot6)
+    Foot7 = FootMeasure.FootMeasure(feet = 7, inches =34)
+    print('Foot7 should be 9 ft. 10 in. ->', Foot7)
+    Foot8 = FootMeasure.FootMeasure(1, 11)
+    Foot9 = FootMeasure.FootMeasure(3, 1)
+    print('Foot8 should be 1 ft. 11 in. ->', Foot8)
+    print('Foot9 should be 3 ft. 1 in. ->', Foot9)
+    Foot10 = FootMeasure.FootMeasure(5,12)
+    print('Foot10 should be 6 ft. ->', Foot10)
+    Foot11 = FootMeasure.FootMeasure(4, 24)
+    print('Foot11 should be 6 ft. ->', Foot11)
+    Foot12 = FootMeasure.FootMeasure(0,11)
+    print('Foot12 should be 0 ft. 11 in. ->', Foot12)
+    Foot13 = FootMeasure.FootMeasure(127)
+    print('Foot13 should be 127 ft. ->', Foot13)
+    print('\nTesting Addition')
+    print('1 ft. 5 in. + 68 inches ->', Foot1 + Foot2)
+    print('5 ft. + 7ft. 34 in. ->', Foot3 + Foot7)
+    print('60 inches + 5 feet ->', Foot3 + Foot6)
+    print('5 ft. + 0 ft. 0 in. ->', Foot3 + Foot4)
+    print('1 ft. 11 in. + 3 ft. 1 in. ->', Foot8 + Foot9)
+    print('5 ft. 12 in. + 60 inches ->', Foot10+Foot6)
+    print('5 ft. 12 in. + 0 ft. 0 in. ->', Foot10 + Foot4)
+    print('1 ft. 11 in. + 1 ft. 5 in. ->', Foot8+Foot1)
+    print('4 ft. 24 in. + 7 ft. 34 in. ->', Foot11+Foot7)
+    print('\nTesting Less than OR equal to')
+    print('1 ft. 5 in <= 68 inches should be True ->', Foot1 <= Foot2)
+    print('5 ft. <= 0 ft. 0 in should be False ->', Foot3 <= Foot4)
+    print('1 ft. 11 in. <= 3 ft. 1 in should be True ->',Foot8 <= Foot9)
+    print('5 ft. 12 in. <= 60 inches should be False ->', Foot10 <= Foot6)
+    print('4 ft. 24 in. <= 5 ft. 12 in should be True ->',Foot11 <= Foot10)
+    print('\nTesting Less than')
+    print('68 inches < 1 ft. 5 in. should be False ->', Foot2 < Foot1)
+    print('5 ft. < 0 ft. 0 in should be False ->',Foot3 < Foot4)
+    print('1 ft. 11 in. < 3 ft. 1 in should be True ->',Foot8 < Foot9)
+    print('5 ft. 12 in. < 60 inches should be False ->',Foot10 < Foot6)
+    print('\nTesting equal to')
+    print('60 inches == 5 feet should be True ->',Foot3==Foot6)
+    print('1 ft. 5 in == 68 inches should be False ->', Foot1 == Foot2)
+    print('5 ft. == 0 ft. 0 in. should be False ->',Foot3 == Foot4)
+    print('1 ft. 11 in. == 3 ft. 1 in should be False ->',Foot8 == Foot9)
+    print('5 ft. 12 in. == 60 inches should be False ->', Foot10 == Foot6)
+    print('4 ft. 24 in. == 5 ft. 12 in should be True ->',Foot11 == Foot10)
+    print('\nTesting not equal to')
+    print('60 inches != 5 feet should be False ->',Foot3 != Foot6)
+    print('1 ft. 5 in != 68 inches should be True ->', Foot1 != Foot2)
+    print('5 ft. != 0 ft. 0 in should be True ->',Foot3 != Foot4)
+    print('1 ft. 11 in. != 3 ft. 1 in should be True ->',Foot8 != Foot9)
+    print('5 ft. 12 in. != 60 inches should be True ->', Foot10 != Foot6)
+    print('4 ft. 24 in. != 5 ft. 12 in should be False ->',Foot11 != Foot10)
+    print('\nTesting Greater than OR equal to')
+    print('60 inches >= 5 feet should be True ->', Foot6 >= Foot3)
+    print('1 ft. 5 in >= 68 inches should be False ->', Foot1 >= Foot2)
+    print('5 ft. >= 0 ft. 0 in should be True ->', Foot3 >= Foot4)
+    print('1 ft. 11 in. >= 3 ft. 1 in should be False ->',Foot8 >= Foot9)
+    print('5 ft. 12 in. >= 60 inches should be True ->',Foot10 >= Foot6)
+    print('4 ft. 24 in. >= 5 ft. 12 in should be True ->',Foot11 >= Foot10)
+    print('\nTesting Greater than')
+    print('60 inches > 5 feet should be False ->',Foot6 > Foot3)
+    print('1 ft. 5 in > 68 inches should be False ->',Foot1 > Foot2)
+    print('5 ft. > 0 ft. 0 in should be True ->',Foot3 > Foot4)
+    print('1 ft. 11 in. > 3 ft. 1 in should be False ->',Foot8 > Foot9)
+    print('5 ft. 12 in. > 60 inches should be True ->',Foot10 > Foot6)
+    print('4 ft. 24 in. > 5 ft. 12 in should be False ->',Foot11 > Foot10)
+
+main()
