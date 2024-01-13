@@ -18,6 +18,7 @@ def maxdef (x):
     list_values = list(x.values())
     for i in x:
         if x[i] > maxd:
+            print(x[i])
             maxd = x[i]
             index_max = index_list
         index_list +=1

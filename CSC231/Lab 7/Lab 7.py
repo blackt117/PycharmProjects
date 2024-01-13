@@ -118,6 +118,8 @@ def merge_sort(a_list):
 
         i, j, k = 0, 0, 0
         while i < len(left_half) and j < len(right_half):
+            print(left_half)
+            print(right_half)
             if left_half[i] <= right_half[j]:
                 a_list[k] = left_half[i]
                 i = i + 1
@@ -215,9 +217,13 @@ def main():
     print(merge_sort.__doc__)
     print()
     lst4 = [0, -1, 7, 5, 4, 10, 9, 7, 12]
+    lst6 = [0,-1]
     merge_sort(lst4)
+    merge_sort(lst6)
     print()
     print(f'The list [0, -1, 7, 5, 4, 10, 9, 7, 12] sorted should be [-1, 0, 4, 5, 7, 7, 9, 10, 12]: {lst4}')
+    print()
+    print(lst6)
     print()
 
     print('Practice sorting via QuickSort')
