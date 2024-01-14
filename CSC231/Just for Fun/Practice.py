@@ -38,6 +38,15 @@ def insert_sort(list1):
             cur_index -= 1
 
 
+def rec_max(list1):
+    if len(list1) == 1:
+        return list1[0]
+    else:
+        result = rec_max(list1[1:])
+        if result >= list1[0]:
+            return result
+        else:
+            return list1[0]
 
 list2 = [9,7,-1,0]
 list3=[9,-7,-5,6,3]
@@ -45,5 +54,6 @@ merge_sert(list2)
 insert_sort(list3)
 print(list3)
 print(list2)
+print(rec_max(list3))
 
 
