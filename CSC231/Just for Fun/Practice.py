@@ -28,8 +28,22 @@ def merge_sert(list1):
             j+=1
             k+=1
 
+def insert_sort(list1):
+    for i in range (1,len(list1)):
+        cur_index = i
+        cur_val = list1[i]
+        while cur_index > 0 and cur_val <= list1[cur_index-1]:
+            list1[cur_index] = list1[cur_index-1]
+            list1[cur_index-1] = cur_val
+            cur_index -= 1
+
+
+
 list2 = [9,7,-1,0]
+list3=[9,-7,-5,6,3]
 merge_sert(list2)
+insert_sort(list3)
+print(list3)
 print(list2)
 
 
